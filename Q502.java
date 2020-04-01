@@ -12,6 +12,10 @@ class Q502 {
 class Solution {
     PriorityQueue<int[]> c = new PriorityQueue<>((x, y) -> x[1] - y[1]); // min heap
     PriorityQueue<int[]> p = new PriorityQueue<>((x, y) -> y[0] - x[0]); // max heap
+
+    // take advantage of the property that W is increasing!
+    // greedy algorithm (one that makes best "local" decision @ each state)
+    // FORMAL DEFINITION: making the locally optimal choice at each stage with the intent of finding a global optimum
     public int findMaximizedCapital(int k, int W, int[] Profits, int[] Capital) {
         assert Profits.length == Capital.length;
         for (int i = 0; i < Capital.length; i++) {
