@@ -20,7 +20,7 @@ public class Cheese {
         while (!q.isEmpty()) {
             int[] pos = q.poll();
             int x = maze[pos[0]][pos[1]];
-            maze[pos[0]][pos[1]] = 0;
+            maze[pos[0]][pos[1]] = 0; // dp, visit each point only once!
             if (x == 9) return 1;
             else if (x == 0) continue;
             for (int[] dir : direction) {
