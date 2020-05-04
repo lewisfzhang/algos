@@ -1,0 +1,24 @@
+class Solution {
+    public boolean canConstruct(String ransomNote, String magazine) {
+//         HashMap<Character, Integer> map = new HashMap<>();
+//         for (int i = 0; i < magazine.length(); i++)
+//             map.compute(magazine.charAt(i), (k, v) -> (v == null) ? 1 : v + 1);
+
+//         for (int i = 0; i < ransomNote.length(); i++) {
+//             char c = ransomNote.charAt(i);
+//             if (!map.containsKey(c)) return false;
+//             map.compute(c, (k, v) -> (v == 1) ? null : v - 1);
+//         }
+//         return true;
+
+        int numChar = 26;
+        int[] count = new int[numChar];
+
+        for (char c : magazine.toCharArray()) count[c - 'a']++;
+        for (char c : ransomNote.toCharArray()) count[c - 'a']--;
+        for (int x : count) {
+            if (x < 0) return false;
+        }
+        return true;
+    }
+}
