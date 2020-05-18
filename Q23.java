@@ -28,7 +28,7 @@ class Solution {
             idx = idx.next;
         }
         return node.next;
-    }
+    } 
 }
 
 class ListNode {
