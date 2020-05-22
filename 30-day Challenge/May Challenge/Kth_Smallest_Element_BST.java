@@ -13,7 +13,7 @@
  *     }
  * }
  */
-class Solution {
+class Solution { 
     int val, n;
 
     public int kthSmallest(TreeNode root, int k) {
