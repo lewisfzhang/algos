@@ -1,5 +1,6 @@
 #!/bin/bash
 
 git add *
-git commit -am '$(date +"%b %d")'
+msg=$(date +"%b %d")
+git commit -am "$msg"
 git push
